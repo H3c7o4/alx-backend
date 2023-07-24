@@ -51,7 +51,7 @@ class Server:
         Returns:
            A list of datas
         """
-        assert type(page) == int and type(page_size) == int 
+        assert type(page) == int and type(page_size) == int
         assert page_size > 0 and page > 0
         data = self.dataset()
         start, end = index_range(page, page_size)
