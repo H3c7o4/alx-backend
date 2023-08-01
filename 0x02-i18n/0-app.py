@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_holberton():
+    """Returns the hello World"""
     return render_template('0-index.html')
 
 
