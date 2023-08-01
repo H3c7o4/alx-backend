@@ -30,7 +30,6 @@ def before_request(login_as: int = None):
     """ Request of each function
     """
     user: dict = get_user()
-    print(user)
     g.user = user
 
 
@@ -62,6 +61,10 @@ def get_locale():
     if locale and locale in app.config['LANGUAGES']:
         return locale
 
+    locale = request.headers.get('locale', None)
+    if locale and locale in app.config['LANGUAGES']:
+        return locale
+
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
@@ -72,7 +75,7 @@ def hello_world():
         Return:
             Initial template html
     """
-    return render_template('5-index.html')
+    return render_template('6-index.html')
 
 
 if __name__ == "__main__":
