@@ -8,9 +8,13 @@ from flask_babel import Babel
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def hello_holberton():
-    """Returns the hello World"""
+    """Greetings
+
+    Returns:
+         Initial template html
+    """
     return render_template('0-index.html')
 
 
